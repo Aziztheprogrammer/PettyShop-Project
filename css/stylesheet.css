@@ -1,0 +1,37 @@
+/* Start Global Rules */
+* {
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+}
+
+*:focus {
+	outline: none;	
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: "Hammersmith One", sans-serif;
+}
+
+:root {
+    --main-color: #C507D6;
+    --secondary-color: #EFCDF2;
+    --dark: #1b2538;
+		--transition-delay: 0.4s;
+}
+
+.container {
+	padding: 0px 20px;
+	margin: auto;
+}
+
+@media (max-width: 992px) {
+	.container {
+		padding: 0px 40px;
+	}
+}
+
