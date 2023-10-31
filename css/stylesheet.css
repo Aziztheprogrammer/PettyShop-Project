@@ -42,11 +42,11 @@ header .container {
 }
 
 header .logo-nav {
-	gap: 48px;
+	gap: 64px;
 }
 
 header .logo-nav > nav {
-	gap: 16px;
+	gap: 24px;
 }
 
 header .logo-nav > nav > a {
@@ -85,4 +85,94 @@ header .header-icons > i:hover {
 	}
 }
 /*End The Header*/
+
+/*Start The Hero Section*/
+section.hero {
+	height: calc(100vh - 80px);
+	font-size: 16px;
+}
+
+section.hero .container {
+	height: 90%;
+}
+
+section.hero .text {
+	max-width: 480px;
+	gap: 16px;
+}
+
+section.hero .text > h1 {
+	font-size: 3.052em;
+	line-height: 1.2;
+	color: var(--dark);
+}
+
+section.hero .text > p {
+	font-size: 1.25em;
+	color: #666;
+	font-weight: 300;
+}
+
+section.hero .text > .search {
+	margin-top: 24px;
+	gap: 24px;
+}
+
+section.hero .text > .search > .search-bar {
+	padding: 8px 16px;
+	border: 1px solid #ddd;
+}
+
+section.hero .text > .search > .search-bar > input {
+	font-weight: 300;
+}
+
+section.hero .text > .search button {
+	background-color: var(--main-color);
+	color: white;
+	padding: 8px 16px;
+	transition: ease all var(--transition-delay);
+}
+
+section.hero .text > .search button:hover {
+	opacity: 0.5;
+}
+
+section.hero .img-div > img {
+	max-width: 100%;
+	height: auto;
+}
+
+@media (max-width: 996px) {
+	section.hero .container {
+		flex-direction: column-reverse;
+		justify-content: center;
+	}
+
+	section.hero .text {
+		width: 80%;
+		text-align: center;
+		align-items: center;
+	}
+}
+
+@media (max-width: 769px) {
+	section.hero {
+		font-size: 14px;
+		height: calc(100vh - 120px);
+		margin-top: 40px;
+	}
+
+	section.hero .text {
+		width: 100%;
+	}
+}
+
+@media (max-width: 600px) {
+	section.hero {
+		font-size: 12px;
+	}
+}
+/*End The Hero Section*/
+
 
