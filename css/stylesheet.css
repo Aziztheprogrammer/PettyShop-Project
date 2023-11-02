@@ -15,6 +15,7 @@ html {
 
 body {
 	font-family: "Outfit", sans-serif;
+	color: var(--dark);
 }
 
 :root {
@@ -225,7 +226,7 @@ section.categories .container {
 	padding-top: calc(var(--section-padding) / 2);
 	padding-bottom: calc(var(--section-padding) / 2);
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(auto, 180px));
+	grid-template-columns: repeat(auto-fit, minmax(180px, auto));
 	justify-content: space-between;
 	gap: 16px;
 }
@@ -233,7 +234,7 @@ section.categories .container {
 @media (max-width: 996px) {
 	section.categories .container {
 		justify-content: center;
-		grid-template-columns: repeat(auto-fit, minmax(auto, 130px));
+		grid-template-columns: repeat(auto-fit, minmax(130px, auto));
 	}
 } 
 
@@ -273,7 +274,7 @@ section.products {
 section.products .container {
 	display: grid;
 	grid-template: repeat(2, auto) / auto 1fr;
-	gap: 64px;
+	gap: 48px;
 }
 
 @media (max-width: 996px) {
@@ -299,14 +300,13 @@ section.products .container .title {
 section.products .container .products-1 {
 	padding: 24px 0px;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+	grid-template-columns: repeat(auto-fit, minmax(250px, auto));
 	gap: 24px;
 }
 
 section.products .container .products-1 > .product {
 	overflow: hidden;
-	border-radius: 12px;
-	cursor: pointer;
+	border-radius: 16px;
 	z-index: 1;
 }
 
@@ -317,9 +317,10 @@ section.products .container .products-1 > .product > i {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	animation: ease 0.7s;
+	animation: ease 1s;
 	display: none;
 	z-index: 2;
+	cursor: pointer;
 }
 
 @keyframes show-plus {
@@ -341,7 +342,7 @@ section.products .container .products-1 > .product:hover > img {
 }
 
 section.products .container .products-1 > .product > img {
-	border-radius: 12px;
+	border-radius: 16px;
 	transition: var(--transition-delay) ease opacity;
 }
 
@@ -371,6 +372,153 @@ section.products .container .products-1 > .product > .product-info .text > span 
 section.products .container .products-1 > .product > .product-info .text > span span {
 	color: #999;
 	font-size: 0.64rem;
+}
+
+section.products .container .popular-categories .categories {
+	padding: 24px 0px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+	gap: 24px;
+}
+
+section.products .container .popular-categories .categories > div {
+	border-radius: 16px;
+	overflow: hidden;
+	min-height: 240px;
+	z-index: 3;
+}
+
+section.products .container .popular-categories .categories > div span {
+	font-size: 1.25rem;
+	font-weight: 800;
+}
+
+section.products .container .popular-categories .categories > div button {
+	padding: 8px 16px;
+	font-weight: lighter;
+	background-color: var(--main-color);
+	margin-top: 8px;
+	transition: var(--transition-delay) ease background-color;
+}
+
+section.products .container .popular-categories .categories > div button:hover {
+	background-color: var(--dark);
+}
+
+section.products .container .popular-categories .categories > .cat-meals::after {
+	content: url("../images/pop-cat-1.webp");
+	width: 100%;
+	height: 100%;
+	border-radius: 16px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	opacity: 0.6;
+	z-index: -1;
+}
+
+section.products .container .popular-categories .categories > .dog-essentials::after {
+	content: url("../images/pop-cat-2.webp");
+	width: 100%;
+	height: 100%;
+	border-radius: 16px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	opacity: 0.7;
+	z-index: -1;
+}
+
+section.products .container .special-offers .offers {
+	padding: 24px 0px;
+	display: grid;
+	grid-template-rows: 1fr 1fr auto;
+	gap: 24px;
+}
+
+section.products .container .special-offers .offers > div {
+	padding: 24px;
+	border-radius: 16px;
+	min-width: 250px;
+	box-shadow: 3px 1px 10px 2px rgba(112,112,112,0.25);
+	-webkit-box-shadow: 3px 1px 10px 2px rgba(112,112,112,0.25);
+	-moz-box-shadow: 3px 1px 10px 2px rgba(112,112,112,0.25);
+}
+
+section.products .container .special-offers .offers > div.offer-2 {
+	box-shadow: none;
+	background-color: var(--secondary-color);
+}
+
+section.products .container .special-offers .offers > div h3 {
+	font-size: 1.563rem;
+	font-weight: 800;
+}
+
+section.products .container .special-offers .offers > div:nth-child(1) span,
+section.products .container .special-offers .offers > div:nth-child(2) span {
+	font-size: 1.25rem;
+	color: #666;
+	font-weight: 300;
+}
+
+section.products .container .special-offers .offers > div img {
+	margin: 24px 0px;
+	max-width: 140px;
+	height: auto;
+}
+
+section.products .container .special-offers .offers > div > div.img-container {
+	position: relative;
+}
+
+section.products .container .special-offers .offers > div > div.img-container::after {
+	content: "\25";
+	font-family: "Font Awesome 6 Free";
+	font-weight: 900;
+	position: absolute;
+	top: 5px;
+	right: -10px;
+	font-size: 1.25rem;
+	height: 40px;
+	width: 40px;
+	background-color: var(--dark);
+	color: white;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+section.products .container .special-offers .offers > div.offer-2 img {
+	aspect-ratio: 1/1;
+	max-width: none;
+	width: 140px;
+	border-radius: 24px;
+}
+
+section.products .container .special-offers .offers > div button {
+	width: 100%;
+	background-color: var(--main-color);
+	color: white;
+	margin-top: 16px;
+	padding: 8px 16px;
+}
+
+section.products .container .special-offers .offers > .limited-time {
+	background-color: var(--main-color);
+	letter-spacing: 1.2px;
+	gap: 16px;
+}
+
+section.products .container .special-offers .offers > .limited-time > .time {
+	gap: 16px;
+}
+
+section.products .container .special-offers .offers > .limited-time > .time > span {
+	background-color: white;
+	padding: 4px 8px;
+	border-radius: 8px;
 }
 /*End Products Section*/
 
