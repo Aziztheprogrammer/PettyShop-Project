@@ -224,7 +224,7 @@ section.categories {
 	padding: var(--section-padding) 0px;
 }
 
-section.categories > h1 {
+section > h1 {
 	font-size: 1.953rem;
 	font-weight: 500;
 	margin: 0px auto;
@@ -555,5 +555,60 @@ section.products .container .special-offers .offers > .limited-time > .time > sp
 	border-radius: 8px;
 }
 /*End Products Section*/
+
+/*Start Our Blog Section*/
+section.our-blog {
+	background-color: #eee;
+	padding: var(--section-padding) 0px;
+}
+
+section.our-blog .container {
+	margin-top: 48px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+	gap: 16px;
+}
+
+section.our-blog .container .article {
+	background-color: white;
+	border-radius: 24px;
+	overflow: hidden;
+}
+
+section.our-blog .container .article > img {
+	border-radius: 24px;
+	margin-top: -150px;
+	opacity: 0.9;
+	width: 100%;
+}
+
+section.our-blog .container .article > .article-info {
+	padding: 24px;
+}
+
+section.our-blog .container .article > .article-info > span {
+	font-size: 1.25rem;
+	font-weight: 800;
+}
+
+section.our-blog .container .article > .article-info > p {
+	color: #666;
+	margin-top: 24px;
+	font-weight: 500;
+}
+
+section.our-blog .container .article > .article-info > .writer {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-top: 16px;
+}
+
+section.our-blog .container .article > .article-info > .writer > img {
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+}
+/*End Our Blog Section*/
 
 
