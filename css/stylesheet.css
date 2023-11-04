@@ -566,7 +566,7 @@ section.our-blog .container {
 	margin-top: 48px;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, auto));
-	gap: 16px;
+	gap: 24px;
 }
 
 section.our-blog .container .article {
@@ -575,11 +575,26 @@ section.our-blog .container .article {
 	overflow: hidden;
 }
 
-section.our-blog .container .article > img {
+section.our-blog .container .article > .img-article {
 	border-radius: 24px;
-	margin-top: -150px;
 	opacity: 0.9;
 	width: 100%;
+	min-height: 180px;
+}
+
+section.our-blog .container .article:nth-child(1) > .img-article {
+	background: url("../images/pop-cat-2.webp") no-repeat center center;
+	background-size: cover;
+}
+
+section.our-blog .container .article:nth-child(2) > .img-article {
+	background: url("../images/art-img-2.webp") no-repeat center center;
+	background-size: cover;
+}
+
+section.our-blog .container .article:nth-child(3) > .img-article {
+	background: url("../images/art-img-3.webp") no-repeat center center;
+	background-size: cover;
 }
 
 section.our-blog .container .article > .article-info {
