@@ -626,4 +626,20 @@ section.our-blog .container .article > .article-info > .writer > img {
 }
 /*End Our Blog Section*/
 
+/*Start The Footer*/
+footer .container {
+	padding: var(--section-padding) 0px;
+	gap: 32px;
+}
+
+footer .shop-info {
+	gap: 24px;
+}
+
+footer .shop-info .social-media {
+	gap: 8px;
+	font-size: 1.25rem;
+}
+/*End The Footer*/
+
 
