@@ -322,7 +322,6 @@ section.products .container .products-1 > .product > i {
 	top: 16px;
 	right: 16px;
 	border-radius: 50%;
-	display: flex;
 	justify-content: center;
 	align-items: center;
 	animation: ease 1s;
@@ -343,6 +342,10 @@ section.products .container .products-1 > .product > i {
 section.products .container .products-1 > .product:hover > i {
 	display: flex;
 	animation-name: show-plus;
+}
+
+section.products .container .products-1 > .added > i {
+	display: flex;
 }
 
 section.products .container .products-1 > .product:hover > img {
