@@ -67,6 +67,20 @@ header .header-icons > i {
 	cursor: pointer;
 }
 
+header .header-icons > i.active-icon {
+	color: var(--main-color);
+	animation: ActiveCart 0.8s infinite alternate;
+}
+
+@keyframes ActiveCart {
+	0% {
+		color: var(--main-color);
+	}
+	100% {
+		color: black;
+	}
+}
+
 header .header-icons > i:hover {
 	color: var(--main-color);
 }
