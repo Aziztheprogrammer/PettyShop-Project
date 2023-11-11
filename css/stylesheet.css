@@ -333,6 +333,10 @@ section.products .container .products-1 > .product {
 }
 
 section.products .container .products-1 > .product > i {
+	background-color: white;
+	height: 30px;
+	width: 30px;
+	border-radius: 50%;
 	top: 16px;
 	right: 16px;
 	border-radius: 50%;

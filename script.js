@@ -10,23 +10,37 @@ function cartStatus(cartProducts) {
 	};
 };
 
+// Show Added Successfuly Message
+var msgDiv = document.createElement("div");
+
+function cartMessage(msg) {
+	msgDiv.textContent = msg;
+	msgDiv.classList.add("cart-msg");
+	msgDiv.style.cssText = `
+		opacity: 1;
+		position: fixed;
+		bottom: 40px;
+		left: 40px;
+		background-color: #76ed86;
+		padding: 8px 24px;
+		border-left: 2px solid #376b3e;
+		z-index: 10;
+		transition: var(--transition-delay) ease all;
+	`;
+	document.body.append(msgDiv);
+}
+
 addIcon.forEach(function (icon) {
 	icon.addEventListener("click", function (e) {
 		e.target.classList.replace("fa-plus", "fa-check");
 		e.target.parentElement.classList.replace("not-added", "added");
 		if (!cartProducts.includes(e.target.parentElement)) {
 			cartProducts.unshift(e.target.parentElement);
+			cartMessage("Item Is Added To Cart Successfuly !");
+			setTimeout(function hideMsg() {
+				document.getElementsByClassName("cart-msg")[0].style.opacity = "0";
+			}, 2000);
 		};
-		cartStatus(cartProducts);
-	});
-});
-
-// Remove From Cart
-cartProducts.forEach(function (parent) {
-	parent.firstElementChild.addEventListener("click", function (e) {
-		e.target.classList.replace("fa-check", "fa-plus");
-		e.target.parentElement.classList.replace("added", "not-added");
-		cartProducts.splice(cartProducts.indexOf(e.target.parentElement), 1, 0);
 		cartStatus(cartProducts);
 	});
 });
