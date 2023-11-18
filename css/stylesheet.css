@@ -85,6 +85,76 @@ header .header-icons > i:hover {
 	color: var(--main-color);
 }
 
+aside.cart-items {
+	display: none;
+	width: 300px;
+	font-family: "Outfit", sans-serif;
+	color: var(--dark);
+	padding: 16px 32px;
+	height: 100%;
+	background-color: white;
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+	transform: translateX(100%);
+	z-index: 5;
+	animation: 1s ease both;
+}
+
+@keyframes OpenAside {
+	0% {
+		transform: translateX(100%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
+}
+
+@keyframes CloseAside {
+	0% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(100%);
+		display: none;
+	}
+}
+
+@media (max-width: 769px) {
+	aside.cart-items {
+		width: 100%;
+	}
+}
+
+aside.cart-items > i {
+	cursor: pointer;
+	transition: var(--transition-delay) ease all;
+}
+
+aside.cart-items > i:hover {
+	color: red;
+}
+
+aside.cart-items > div {
+	margin-top: 32px;
+	display: flex;
+	flex-direction: column;
+}
+
+aside.cart-items > div .item i {
+	transition: var(--transition-delay) ease all;
+	cursor: pointer;
+}
+
+aside.cart-items > div .item i:hover {
+	color: red;
+}
+
+aside.cart-items .product-info {
+	font-size: 0.8rem;
+	padding: 0px;
+}
+
 @media (max-width: 769px) {
 	header .logo-nav > nav {
 		background-color: var(--secondary-color);
@@ -375,30 +445,30 @@ section.products .container .products-1 > .product > img {
 	transition: var(--transition-delay) ease opacity;
 }
 
-section.products .container .products-1 > .product > .product-info {
+.product-info {
 	display: flex;
 	justify-content: space-between;
 	padding: 16px;
 }
 
-section.products .container .products-1 > .product > .product-info .text {
+.product-info .text {
 	display: flex;
 	flex-direction: column;
 }
 
-section.products .container .products-1 > .product > .product-info .text > p {
+.product-info .text > p {
 	color: #666;
 	transform: translateY(-5px);
 }
 
-section.products .container .products-1 > .product > .product-info .text > span {
+.product-info .text > span {
 	display: flex;
 	gap: 8px;
 	align-items: center;
 	font-weight: 800;
 }
 
-section.products .container .products-1 > .product > .product-info .text > span span {
+.product-info .text > span span {
 	color: #999;
 	font-size: 0.64rem;
 }

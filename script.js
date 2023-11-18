@@ -45,6 +45,20 @@ addIcon.forEach(function (icon) {
 	});
 });
 
+// Open The Aside Of Added Items
+let cartIcon = document.getElementsByClassName("fa-cart-shopping")[0];
+let itemsAside = document.getElementsByClassName("cart-items")[0];
+let closeAsideButton = document.querySelector(".cart-items > i");
+
+cartIcon.addEventListener("click", function (e) {
+	itemsAside.style.display = "block";
+	itemsAside.style.animationName = "OpenAside";
+});
+
+closeAsideButton.addEventListener("click", function (e) {
+	itemsAside.style.animationName = "CloseAside";
+});
+
 
 
 
