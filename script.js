@@ -40,6 +40,7 @@ addIcon.forEach(function (icon) {
 			setTimeout(function hideMsg() {
 				document.getElementsByClassName("cart-msg")[0].style.opacity = "0";
 			}, 2000);
+			loadItem();
 		};
 		cartStatus(cartProducts);
 	});
@@ -51,13 +52,49 @@ let itemsAside = document.getElementsByClassName("cart-items")[0];
 let closeAsideButton = document.querySelector(".cart-items > i");
 
 cartIcon.addEventListener("click", function (e) {
-	itemsAside.style.display = "block";
 	itemsAside.style.animationName = "OpenAside";
 });
 
 closeAsideButton.addEventListener("click", function (e) {
 	itemsAside.style.animationName = "CloseAside";
 });
+
+// Load Cart Items In The Aside Items
+let itemsContainer = document.querySelector(".cart-items > div");
+
+function loadItem() {
+	itemsContainer.innerHTML = "";
+	cartProducts.forEach(function (item) {
+		let itemsInfo = item.outerText.split("\n");
+		itemsInfo = itemsInfo.filter((i) => i != "");
+		// Create Parent Div For Item
+		let parentDiv = document.createElement("div");
+		parentDiv.classList.add("item", "flex", "items-center", "justify-between");
+		// Create Remove Item Icon
+		let removeFromCart = document.createElement("i");
+		removeFromCart.classList.add("fa-solid", "fa-square-minus");
+		parentDiv.append(removeFromCart);
+		// Create Product Info Div
+		let productInfo = document.createElement("div");
+		productInfo.classList.add("product-info");
+		productInfo.innerHTML = `
+			<div class="text">
+				<p>${itemsInfo[0]}</p>
+				<span>
+					${itemsInfo[1]}
+					<span>
+						${itemsInfo[2]}
+					</span>
+				</span>
+			</div>
+		`;
+		parentDiv.prepend(productInfo);
+		itemsContainer.append(parentDiv);
+
+	});
+}
+
+
 
 
 
