@@ -140,15 +140,6 @@ aside.cart-items > div {
 	gap: 24px;
 }
 
-aside.cart-items > div .item i {
-	transition: var(--transition-delay) ease all;
-	cursor: pointer;
-}
-
-aside.cart-items > div .item i:hover {
-	color: red;
-}
-
 aside.cart-items .product-info {
 	font-size: 1rem;
 	padding: 0px;
@@ -433,6 +424,11 @@ section.products .container .products-1 > .product:hover > i {
 
 section.products .container .products-1 > .added > i {
 	display: flex;
+}
+
+section.products .container .products-1 > .added:hover > i {
+	background-color: red;
+	color: white;
 }
 
 section.products .container .products-1 > .product:hover > img {
