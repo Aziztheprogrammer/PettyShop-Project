@@ -86,6 +86,7 @@ header .header-icons > i:hover {
 }
 
 aside.cart-items {
+	display: block;
 	width: 350px;
 	font-family: "Outfit", sans-serif;
 	color: var(--dark);
@@ -102,18 +103,22 @@ aside.cart-items {
 
 @keyframes OpenAside {
 	0% {
+		display: none;
 		transform: translateX(100%);
 	}
 	100% {
+		display: block;
 		transform: translateX(0%);
 	}
 }
 
 @keyframes CloseAside {
 	0% {
+		display: block;
 		transform: translateX(0%);
 	}
 	100% {
+		display: none;
 		transform: translateX(100%);
 	}
 }
